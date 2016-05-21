@@ -1,0 +1,18 @@
+body {
+	background-color: #333;
+	text-align:center;
+	
+}
+input {
+ outline:none;
+}
+
+#box {
+  position:relative;
+  margin:8% auto auto auto;
+  width:450px;
+  padding:40px 50px;
+  background-color:#fff;
+  display: table;
+  color: #333;
+}

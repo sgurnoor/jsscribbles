@@ -1,21 +1,31 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<link rel="stylesheet" href ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
 <script type="text/javascript" src="convert-to-roman.js">
 </script>
 <script type = "text/javascript">function isNumber(evt) {
     evt = (evt) ? evt : window.event;
     var charCode = (evt.which) ? evt.which : evt.keyCode;
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+    document.getElementById("num").style.borderColor = "red";
         return false;
     }
+    document.getElementById("num").style.borderColor = null;
     return true;
 }</script>
 <title>Convert to Roman Numeral</title></head>
 <body>
+<div class="container">
+<div id = "box">
 <form> 
 Enter number:<br>
-<input type="text" value = "2" id="num" onkeypress="return isNumber(event)"><br>
-<input type="submit" onclick="return convertToRoman();" value = "submit"><br>
+<input class="form-control" type="text" value = "2" id="num" onkeypress="return isNumber(event)">
+<button class="btn btn-primary" onclick="return convertToRoman();">Submit</button>
 </form>
 <span id = "ans"></span>
+</div>
+</div>
+</body>
+</html>
