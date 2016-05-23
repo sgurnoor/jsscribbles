@@ -5,12 +5,18 @@
 <link rel="stylesheet" href="style.css">
 <script type="text/javascript" src="convert-to-roman.js">
 </script>
+<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+<script> 
+$(function(){
+  $("#header").load("header.html");
+});
+</script>
 <script type = "text/javascript">function isNumber(evt) {
     evt = (evt) ? evt : window.event;
     var charCode = (evt.which) ? evt.which : evt.keyCode;
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
     document.getElementById("num").style.borderColor = "red";
-    document.getElementById("ans").innerHTML = "<p style='color:red'>Please enter a digit between 0 and 9 please</p>";
+    document.getElementById("ans").innerHTML = "<p style='color:red'>Please enter a digit between 0 and 9</p>";
         return false;
     }
     document.getElementById("num").style.borderColor = null;
@@ -20,6 +26,7 @@
 <title>Convert to Roman Numeral</title></head>
 <body>
 <div class="container">
+<div id = "header"></div>
 <div id = "box">
 <form> 
 Enter number:<br>
