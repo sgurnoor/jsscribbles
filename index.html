@@ -3,15 +3,25 @@
 <head>
 <link rel="stylesheet" href ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" href="style.css">
+<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+<script> 
+$(function(){
+  $("#header").load("header.html");
+});
+</script>
 <title>
 Javascript Algorithms
 </title>
 </head>
-<body>
-<div class="container">
+
+
+<body class="container">
+<div id="header"></div>
+
 <div id = "box">
-<a href = "roman"> Convert numbers to roman numerals! </a>
+<a href = "roman.html"> Convert numbers to roman numerals! </a>
 </div>
-</div>
+
+
 </body>
 </html>
