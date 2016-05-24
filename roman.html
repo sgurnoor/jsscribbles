@@ -1,40 +1,30 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-<link rel="stylesheet" href ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link rel="stylesheet" href="style.css">
-<script type="text/javascript" src="convert-to-roman.js">
-</script>
-<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-<script> 
-$(function(){
-  $("#header").load("header.html");
-});
-</script>
-<script type = "text/javascript">function isNumber(evt) {
-    evt = (evt) ? evt : window.event;
-    var charCode = (evt.which) ? evt.which : evt.keyCode;
-    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-    document.getElementById("num").style.borderColor = "red";
-    document.getElementById("ans").innerHTML = "<p style='color:red'>Please enter a digit between 0 and 9</p>";
-        return false;
-    }
-    document.getElementById("num").style.borderColor = null;
-    document.getElementById("ans").innerHTML = "";
-    return true;
-}</script>
-<title>Convert to Roman Numeral</title></head>
-<body>
-<div class="container">
-<div id = "header"></div>
-<div id = "box">
-<form> 
-Enter number:<br>
-<input class="form-control" type="text" value = "2" id="num" onkeypress="return isNumber(event)">
-<button class="btn btn-primary" onclick="return convertToRoman();">Submit</button>
-</form>
-<span id = "ans"></span>
-</div>
-</div>
-</body>
+	<head>
+		<link rel="stylesheet" href ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="tooltip.css">
+		<script type="text/javascript" src="convert-to-roman.js"> </script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+		<script type="text/javascript" src="header.js"> </script>
+		<script src="clipboard.min.js"></script>
+		<script type = "text/javascript" src="isNumber.js"></script>
+		<title>Convert to Roman Numeral</title>
+	</head>
+	<body>
+		<div class="container">
+			<div id = "header">
+			</div> <!--header-->
+			<div id = "box">
+				<form> 
+					Enter number: <br>
+					<input class="form-control" type="text" value = "2" id="num" onkeypress="return isNumber(event)"> <br> 
+					<button class="btn btn-primary" onclick="return convertToRoman();">Convert</button><br><br>
+					</form>
+					<input class="form-control" type="text" id = "ans"></input> <br>
+				<button class="btn" id="copyBtn" data-clipboard-action="copy" data-clipboard-target="#ans">Copy</button>
+			</div><!-- box-->
+		</div> <!--container-->
+		<script src="copyText.js"></script>
+	</body>
 </html>
